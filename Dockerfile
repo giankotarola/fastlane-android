@@ -29,8 +29,7 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash \
 
 # Create a non-root user and add permissions
 RUN useradd -m user
-RUN mkdir /builds \
-  && chown -R user:user /var/lib/gems /usr/local/bin /builds
+RUN chown -R user:user /var/lib/gems /usr/local
 USER user
 WORKDIR /home/user
 
