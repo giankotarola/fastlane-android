@@ -9,7 +9,7 @@ RUN dpkg --add-architecture i386 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists /var/cache/apt
 
-# Set up environment variables
+# Set env vars
 ENV ANDROID_HOME="/home/user/android-sdk-linux" \
   SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip"
 ENV DEBIAN_FRONTEND noninteractive
@@ -27,9 +27,10 @@ RUN yes | apt-get install ruby-full
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash \
   && apt-get install -yq nodejs
 
-# Create a non-root user
+# Create a non-root user and add permissions
 RUN useradd -m user
-RUN chown -R user:user /var/lib/gems /usr/local/bin /builds
+RUN mkdir /builds \
+  && chown -R user:user /var/lib/gems /usr/local/bin /builds
 USER user
 WORKDIR /home/user
 
