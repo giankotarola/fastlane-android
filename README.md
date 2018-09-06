@@ -1,0 +1,3 @@
+[![Docker Automated build](https://img.shields.io/docker/automated/gotarola/fastlane-android.svg)](https://hub.docker.com/r/gotarola/fastlane-android/) [![Docker Build Status](https://img.shields.io/docker/build/gotarola/fastlane-android.svg)](https://hub.docker.com/r/gotarola/fastlane-android/) [![Docker Pulls](https://img.shields.io/docker/pulls/gotarola/fastlane-android.svg)](https://hub.docker.com/r/gotarola/fastlane-android/)
+# Fastlane android image 🚀
+Useful for Gitlab CI runner.
